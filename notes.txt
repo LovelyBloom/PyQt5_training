@@ -1,0 +1,48 @@
+the core of every Qt Application is the QApplication class.
+The QApplication Object holds the event loop of The application
+The core loop which governs all the user interactions with the GUI.
+
+events are such as the press of a key or a mouse click which is placed
+in event queue. The event handler deals with the event, then passes
+control back to the event loop to wait for more events. There's only one
+running event loop per application.
+
+Every application needs at least one QMainWindow, though you can have
+more than one if you need to. However, no matter how many you have,
+your application will always exit when the last main window is closed.
+you must always call .show() on a newly created QMainWindows as they
+are created hidden by default. so you must change the state of their
+instance.
+
+To make a customisable QMainWindow(). we simply make 
+it the parent of our object.And our object is now capable 
+of making a window in the Operating Systems' GUI. on ubuntu
+and ubuntu-mate that service is called lightdm.
+Qt is cross-platform so the window will apear on all Windows, macOS and unix-like Operating Systems at variaty of cpu schemes such as arm64-v8
+so it works on Raspberry Pie as well.
+
+by using the setWindowsTitle method you can change the title of a window. and so change the state of the QMainWindow Instance.
+
+A QLabel object is for displaying a string in window. QLabel is a widget.
+
+Qt namespace in PyQt5 is: (Qt.)
+
+.setCentralWidget is a public function of QMainWindow that allows
+you to put the widget to go in the middle of the parent window instance.
+
+every interaction the user has with a Qt application causes an Event.
+There are multiple types of event, each representing a different type
+of interaction -- eg. mouse or keyboard events. for example, clicking
+on a widget will cause a QMouseEvent to be sent to the .mousePressEvent
+event handler on the widget.
+
+you can intercept events by subclassing and overriding the handler function
+on the class, as you would for any other function.
+
+Qt uses 'Signal's for 'listening' to notification of things happening 
+in your application. Data can also be sent alongside a Singnal.
+The receivers of Signals are called 'Slot's. A number of standard slots
+are provided on Qt classes to allow you to wire together different
+parts of your application. However, you can also use any Python function
+as a slot, and therefore receive the message yourself.
+
