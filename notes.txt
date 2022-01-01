@@ -46,3 +46,12 @@ are provided on Qt classes to allow you to wire together different
 parts of your application. However, you can also use any Python function
 as a slot, and therefore receive the message yourself.
 
+for our Signals we can create custom object methods that will act as our Slots
+Then we use .connect on the signal and pass the method to signal.
+for a list of Signal and information on objects and object signals we can
+always check the documentation even if they are for Cpp.
+
+To intercept an Event. we simply override the object method with
+our new method of the same name. This allows you to propagate events
+up the object hierarchy, handling only those parts of an event handler
+that you wish.

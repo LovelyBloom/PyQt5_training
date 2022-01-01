@@ -29,6 +29,11 @@ class MainWindow(QMainWindow):
 	def my_custom_fn(self, a="HELLLO!", b=5):
 		print(a, b)
 
+	#override
+	def contextMenuEvent(self, event):
+		print("Context menu event!")
+		super(MainWindow, self).contextMenuEvent(event)
+
 
 app = QApplication(sys.argv)
 
